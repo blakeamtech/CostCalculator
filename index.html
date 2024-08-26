@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="toggle-container">
+            <button id="toggleSettings" class="toggle-btn">⚙️</button>
+        </div>
+        <h1>Operating Cost Calculator</h1>
+        <form id="costForm">
+            <div class="form-group">
+                <label for="students">Number of Students:</label>
+                <input type="number" id="students" name="students" min="0" value="5000">
+            </div>
+            <div class="form-group">
+                <label for="tokens">Average Number of OpenAI Tokens per Student:</label>
+                <input type="number" id="tokens" name="tokens" min="0" value="100000">
+            </div>
+            <div class="form-group">
+                <label for="awsInstances">Number of AWS Instances:</label>
+                <input type="number" id="awsInstances" name="awsInstances" min="1" value="3">
+            </div>
+            <div class="form-group">
+                <label for="engineeringHours">Engineering Team Hours per Month:</label>
+                <input type="number" id="engineeringHours" name="engineeringHours" min="0" value="40">
+            </div>
+            <div class="form-group">
+                <label for="salesHours">Sales and Marketing Team Hours per Month:</label>
+                <input type="number" id="salesHours" name="salesHours" min="0" value="20">
+            </div>
+            <div class="form-group">
+                <label for="legalHours">Legal Team Hours per Month:</label>
+                <input type="number" id="legalHours" name="legalHours" min="0" value="10">
+            </div>
+        </form>
+        <div id="result">
+            <h2>Monthly Calculations:</h2>
+            <p>Total Operating Cost: <span id="costOutput">$0</span></p>
+            <p>Total Revenue: <span id="revenueOutput">$0</span></p>
+            <p>Profit Margin: <span id="profitMarginOutput">0%</span></p>
+        </div>
+        <div id="settingsPanel" class="settings-panel">
+            <h2>Cost Settings</h2>
+            <div class="form-group">
+                <label for="openAICost">OpenAI Cost per 1,000 tokens:</label>
+                <input type="number" id="openAICost" step="0.01" value="0.03">
+            </div>
+            <div class="form-group">
+                <label for="awsCostPerInstance">AWS Cost per Instance:</label>
+                <input type="number" id="awsCostPerInstance" step="1" value="200">
+            </div>
+            <div class="form-group">
+                <label for="engineeringCostPerHour">Engineering Cost per Hour:</label>
+                <input type="number" id="engineeringCostPerHour" step="1" value="25">
+            </div>
+            <div class="form-group">
+                <label for="salesCostPerHour">Sales Cost per Hour:</label>
+                <input type="number" id="salesCostPerHour" step="1" value="25">
+            </div>
+            <div class="form-group">
+                <label for="legalCostPerHour">Legal Cost per Hour:</label>
+                <input type="number" id="legalCostPerHour" step="1" value="100">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
